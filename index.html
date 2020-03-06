@@ -49,16 +49,16 @@
       </div>
       <div class="musicPlayer">
         <div id="container">
-          <div id="audio-img">
-            <img class="cover" title="Worldline;Dead player provided by Monolith" alt="Worldline;Dead" >
+          <div id="audio-img" class="box">
+            <img class="box cover" title="Worldline;Dead player provided by Monolith" alt="Worldline;Dead" >
           </div>
-          <div id="audio-player">
-            <div id="audio-info">
+          <div id="audio-player" class="box">
+            <div id="audio-info" class="box">
               <span class="artist"></span> - <span class="title"></span>
             </div>
             <!-- <input id="volume" type="range" min="0" max="10" value="5"> -->
             <br>
-            <div id="audio-buttons">
+            <div id="audio-buttons" class="box">
               <button id="prev"><</button>
               <button id="play"></button>
               <button id="pause"></button>
@@ -66,30 +66,34 @@
               <button id="next">˃</button>
             </div>
             <div class="clear"></div>
-            <div id="tracker">
-              <div id="progressbar">
-                <span id="progress"></span>
+            <div id="tracker" class="box">
+              <div id="progressbar" class="box">
+                <span id="progress" class="box"></span>
               </div>
-              <span id="duration"></span>
+              <div id="durationBox">
+                <span id="duration" class="box"></span>
+              </div>
             </div>
             <div class="clear"></div>
             <br>
-            <ul id="playlist">
-              <li song="Memories.mp3" cover="cover1.jpg" artist="Monolith">Memories</li>
-              <li song="As Of Right Now.mp3" cover="cover1.jpg" artist="Monolith">As Of Right</li>
-              <li song="Ominous.mp3" cover="cover1.jpg" artist="Monolith">Ominous</li>
-              <li song="Break Your Mind.mp3" cover="cover1.jpg" artist="Monolith">Break Your Mind</li>
-              <li song="Severity Of Destiny.mp3" cover="cover1.jpg" artist="Monolith">Severity Of Destiny</li>
-              <li song="Evildoer's Dance.mp3" cover="cover1.jpg" artist="Monolith">Evildoer's Dance</li>
-              <li song="Prying Eyes.mp3" cover="cover1.jpg" artist="Monolith">Prying Eyes</li>
-              <li song="Help,Kill.mp3" cover="cover1.jpg" artist="Monolith">Help,Kill</li>
-              <li song="Collapsing Structure.mp3" cover="cover1.jpg" artist="Monolith">Collapsing Structure</li>
-              <li song="Devil's Hand.mp3" cover="cover1.jpg" artist="Monolith">Devil's Hand</li>
-              <li song="The Impact.mp3" cover="cover1.jpg" artist="Monolith">The Impact</li>
-              <li song="Watermelon's Symphony.mp3" cover="cover1.jpg" artist="Monolith">Watermelon's Symphony</li>
-              <li song="Worldline;Dead.mp3" cover="cover1.jpg" artist="Monolith">Worldline;Dead</li>
-            </ul>
           </div>
+          <ul id="playlist" class="box">
+            <li song="Memories.mp3" cover="cover1.jpg" artist="Monolith">Memories</li>
+            <li song="As Of Right Now.mp3" cover="cover1.jpg" artist="Monolith">As Of Right Now</li>
+            <li song="Ominous.mp3" cover="cover1.jpg" artist="Monolith">Ominous</li>
+            <li song="Break Your Mind.mp3" cover="cover1.jpg" artist="Monolith">Break Your Mind</li>
+            <li song="Severity Of Destiny.mp3" cover="cover1.jpg" artist="Monolith">Severity Of Destiny</li>
+            <li song="Evildoer's Dance.mp3" cover="cover1.jpg" artist="Monolith">Evildoer's Dance</li>
+            <li song="Prying Eyes.mp3" cover="cover1.jpg" artist="Monolith">Prying Eyes</li>
+            <li song="Help,Kill.mp3" cover="cover1.jpg" artist="Monolith">Help,Kill</li>
+            <li song="Collapsing Structure.mp3" cover="cover1.jpg" artist="Monolith">Collapsing Structure</li>
+            <li song="Devil's Hand.mp3" cover="cover1.jpg" artist="Monolith">Devil's Hand</li>
+            <li song="The Impact.mp3" cover="cover1.jpg" artist="Monolith">The Impact</li>
+            <li song="Watermelon's Symphony.mp3" cover="cover1.jpg" artist="Monolith">Watermelon's Symphony</li>
+            <li song="Worldline;Dead.mp3" cover="cover1.jpg" artist="Monolith">Worldline;Dead</li>
+          </ul>
+
+
         </div>
       </div>
       <div class="deadColumn">
@@ -128,7 +132,7 @@
     var y_scroll_pos = window.pageYOffset;
     var scroll_pos_test = worldline_position;
 
-    if(y_scroll_pos > scroll_pos_test) {
+    if(y_scroll_pos > scroll_pos_test - 590) {
         $('.worldlineColumn').addClass('start');
         $('.deadColumn').addClass('start');
         $('.musicPlayer').addClass('start');
@@ -146,7 +150,7 @@ $(window).on('scroll', function() {
   var y_scroll_pos = window.pageYOffset;
   var scroll_pos_test = landingPage_position;
 
-  if(y_scroll_pos < scroll_pos_test - 20) {
+  if(y_scroll_pos < scroll_pos_test + 300) {
       $('.landingScreenTop').addClass('start');
       $('.landingScreenBottom').addClass('start');
   }
