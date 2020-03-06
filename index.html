@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Project Monolith 2.0</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<body>
+
+
+  <div class="theDock">
+    <ul>
+      <a class="scroll" href="#main-nav"><li>⬡</li></a>
+      <a class="scroll" href="#sectionTwo"><li>⬡</li></a>
+      <a class="scroll" href="#worldlineDeadSection"><li>⬡</li></a>
+      <a class="scroll" href="#sectionFour"><li>⬡</li></a>
+      <a class="scroll" href="#sectionFive"><li>⬡</li></a>
+    </ul>
+  </div>
+  <nav id="main-nav">
+    <img src="images/Monolithlogo.png" title="Actwave" alt="monolith.png" class="logo">
+    <ul class="main-menu">
+      <li><a href="#">Office</a></li>
+      <li><a href="#">Platform</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contacts</a></li>
+      <li><a href="#">Address</a></li>
+      <li><a href="#">Staff</a></li>
+    </ul>
+  </nav>
+
+  <div id="fullpage">
+    <section id="Home">
+      <div class="landingScreenTop">
+        <h2>Project Monolith v2.0</h2>
+      </div>
+      <div class="landingScreenBottom">
+        <a class="scroll down" href="#sectionTwo">↓↓↓</a>
+      </div>
+    </section>
+    <section id="sectionTwo">
+      <h2>section 2</h2>
+    </section>
+    <section id="worldlineDeadSection">
+      <div class="worldlineColumn">
+        <h1>WORLDLINE</h1>
+      </div>
+      <div class="musicPlayer">
+        <h1>Music Player Here</h1>
+      </div>
+      <div class="deadColumn">
+        <h1>DEAD</h1>
+      </div>
+    </section>
+    <!-- <section id="sectionFour"></section>
+    <section id="sectionFive"></section> -->
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="jquery.scrollify.js"></script>
+
+
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+  var scrollLink = $('.scroll');
+
+  // Smooth scrolling
+  scrollLink.click(function(e) {
+    e.preventDefault();
+    $('body,html').animate({
+      scrollTop: $(this.hash).offset().top
+    }, 500 );
+  });
+
+  // Checking if the animation shall occur
+  var worldline_position = $('#worldlineDeadSection').offset().top;
+
+  $(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var scroll_pos_test = worldline_position;
+
+    if(y_scroll_pos > scroll_pos_test) {
+        $('.worldlineColumn').addClass('start');
+        $('.deadColumn').addClass('start');
+        $('.musicPlayer').addClass('start');
+    }
+    else {
+      $('.worldlineColumn').removeClass('start');
+      $('.deadColumn').removeClass('start');
+      $('.musicPlayer').removeClass('start');
+    }
+});
+
+var landingPage_position = $('#Home').offset().top;
+
+$(window).on('scroll', function() {
+  var y_scroll_pos = window.pageYOffset;
+  var scroll_pos_test = landingPage_position;
+
+  if(y_scroll_pos < scroll_pos_test - 20) {
+      $('.landingScreenTop').addClass('start');
+      $('.landingScreenBottom').addClass('start');
+  }
+  else {
+    $('.landingScreenTop').removeClass('start');
+    $('.landingScreenBottom').removeClass('start');
+  }
+});
+
+  // Active link switching
+  $(window).scroll(function() {
+    var scrollbarLocation = $(this).scrollTop();
+
+    scrollLink.each(function() {
+
+      var sectionOffset = $(this.hash).offset().top - 20;
+
+      if ( sectionOffset <= scrollbarLocation ) {
+        $(this).children().addClass('active');
+        $(this).siblings().children().removeClass('active');
+      }
+    })
+
+  })
+  $.scrollify({
+    section: "section",
+    sectionName: "Home",
+    easing: "easeOutExpo",
+    touchScroll: true,
+    scrollSpeed: 600
+  })
+})
+
+  </script>
+</body>
+
+</html>

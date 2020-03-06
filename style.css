@@ -1,0 +1,307 @@
+/* @font-face {
+    font-family: 'MyWebFont';
+    src: url('webfont.eot');
+    src: url('fonts/abovedemoregular-ljmd-webfont.woff') format('woff'),
+     url('fonts/AboveDemoRegular-lJMd.ttf') format('truetype');
+}
+@font-face {
+    font-family: "MyRegularWebFont";
+    src: url('fonts/gisha.woff') format('woff'),
+      url('fonts/gisha.ttf') format('truetype');
+} */
+@font-face {
+    font-family: "MonolithicFont";
+    src: url('fonts/rexlia rg.ttf') format('truetype');
+}
+@font-face {
+    font-family: "OldMonolithicFont";
+    src: url('fonts/Deutsch.ttf') format('truetype');
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+html, body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: "MonolithicFont", serif, sans-serif;
+  font-weight: lighter;
+}
+body {
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.box {
+  /* border: red 1px solid; */
+}
+#main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  padding: 20px 0;
+  font-size: 13px;
+  width: 90%;
+  margin: auto;
+}
+#main-nav .logo {
+
+}
+#main-nav ul {
+  list-style: none;
+  display: flex;
+}
+#main-nav ul li {
+  padding: 0 10px;
+}
+#main-nav ul li a {
+  padding-bottom: 2px;
+}
+#main-nav ul li a:hover {
+  border-bottom: 2px solid #262626;
+}
+#main-nav ul.main-menu{
+  flex: 1;
+  margin-left: 20px;
+}
+#main-nav a {
+  color: #262626;
+  text-decoration: none;
+}
+.theDock{
+  bottom: 0;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+}
+.theDock ul {
+  list-style: none;
+}
+.theDock a{
+  text-decoration: none;
+  font-family: "MonolithicFont", sans-serif;
+}
+.theDock li{
+  color: rgba(149, 165, 166, 1);
+  font-size: 16px;
+  transition: transform .1s;
+  padding: 0;
+}
+.theDock li:hover{
+  transform: scale(1.1);
+}
+.theDock li.active{
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: red;
+  transform: scale(1.3);
+  color: rgba(232, 236, 241, 1)!important;
+}
+h2 {
+  color: rgba(232, 236, 241, 1);
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-family: 'MonolithicFont', sans-serif;
+}
+
+#fullpage {
+  scroll-behavior: smooth;
+  background-color: #fff;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#fullpage section{
+
+
+}
+#fullpage section:nth-child(1){
+  background-image: url('images/monolith3.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: rgb(48,48,48);
+}
+#Home {
+  border-top: red 4px solid;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 90vh;
+}
+.landingScreenTop {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landingScreenTop.start {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.landingScreenBottom {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.landingScreenBottom.start {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+.down {
+  animation: blinker 2s linear infinite;
+  text-decoration: none;
+  font-size: 5em;
+  color: rgba(232, 236, 241, 1);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+  cursor: pointer;
+}
+#Home h2 {
+  position: absolute;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: red;
+  font-size: 6vw;
+}
+
+
+#fullpage section:nth-child(2){
+  position: relative;
+  background-color: rgb(64,64,64);
+  height: 100vh;
+}
+#worldlineDeadSection {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+}
+.worldlineColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: purple;
+  background-color: black;
+}
+.worldlineColumn h1 {
+  font-size: 5vw;
+  font-family: 'OldMonolithicFont', sans-serif;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.worldlineColumn.start {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+.deadColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: purple;
+  background-color: black;
+}
+.deadColumn h1 {
+  font-size: 5vw;
+  font-family: 'OldMonolithicFont', sans-serif;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.deadColumn.start {
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+.musicPlayer {
+  font-family: 'OldMonolithicFont', sans-serif;
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.musicPlayer.start {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.musicPlayer h1 {
+  font-size: 3vw;
+  color: black;
+}
+
+#fullpage section:nth-child(3){
+  position: relative;
+  background-color: rgb(84,84,84);
+}
+
+@media only screen and (max-device-width: 1366px) {
+  #fullpage section:nth-child(2) {
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 1100px) {
+  #main-nav {
+    display: none;
+  }
+  #Home {
+    border-top: none;
+  }
+}
