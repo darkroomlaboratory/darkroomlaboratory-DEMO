@@ -82,7 +82,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: black;
 }
 
 /* Handle */
@@ -105,8 +105,8 @@ body {
   height: 8vh;
   padding: 20px 0;
   font-size: 13px;
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  border-bottom: red 4px solid;
 }
 #main-nav .logo {
 
@@ -189,7 +189,6 @@ h2 {
   background-color: rgb(48,48,48);
 }
 #Home {
-  border-top: red 4px solid;
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: 90vh;
@@ -235,6 +234,11 @@ h2 {
   background-color: rgb(64,64,64);
   height: 100vh;
 }
+#fullpage section:nth-child(3){
+  position: relative;
+  background-color: black;
+}
+
 #worldlineDeadSection {
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
@@ -272,6 +276,7 @@ h2 {
   animation: 1s ease-out 0s 1 slideInFromBottom;
 }
 .musicPlayer {
+  border-radius: 50px;
   font-family: 'OldMonolithicFont', sans-serif;
   background-color: purple;
   display: flex;
@@ -286,11 +291,187 @@ h2 {
   font-size: 3vw;
   color: black;
 }
-
-#fullpage section:nth-child(3){
-  position: relative;
-  background-color: rgb(84,84,84);
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  min-height: 400px;
+  overflow: auto;
+  width: 40vw;
+  border: indigo solid 10px;
+  padding: 0;
+  outline: none;
+  font-family: "Arial" sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+  color: purple;
+  background: black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
+.clear {
+  clear: both;
+}
+#audio-img {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.cover {
+  width: 100%;
+  z-index: 1;
+}
+#audio-player {
+  display: grid;
+  grid-template-rows: 0.1fr 0.5fr 0.5fr 0.5fr 1fr;
+  align-content: flex-start;
+}
+#audio-info {
+  text-align: center;
+}
+#audio-info .artist {
+  font-weight: bold;
+}
+input#volume {
+  width: 95%;
+  -webkit-appearance: none !important;
+  margin-left: 2%;
+  background: #ccc;
+  height: 1px;
+  margin-bottom: 20px;
+}
+input#volume::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: url("images/buttons/knob.png") no-repeat;
+  height: 12px;
+  width: 12px;
+  cursor: pointer;
+}
+#audio-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+button#play {
+  width: 70px;
+  height: 70px;
+  background: url("images/buttons/play.png") no-repeat;
+  float: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: black solid 1px;
+  outline: none;
+  transition: transform .1s;
+}
+button#pause {
+  width: 70px;
+  height: 70px;
+  background: url("images/buttons/pause.png") no-repeat;
+  float: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: black solid 1px;
+  outline: none;
+}
+button#stop {
+  width: 70px;
+  height: 70px;
+  background: url("images/buttons/stop.png") no-repeat;
+  float: left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: black solid 1px;
+  outline: none;
+}
+button#prev {
+  color: purple;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background: black;
+  outline: none;
+  outline: none;
+}
+button#next {
+  color: purple;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background: black;
+  outline: none;
+}
+#playlist {
+  list-style: none;
+  padding: 10px;
+}
+#playlist li {
+  cursor: pointer;
+  margin: 5px;
+}
+#tracker {
+  position: relative;
+  width: 100%;
+}
+#playlist li.active {
+  font-weight: bold;
+  padding: 3px;
+  background: grey;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#playlist li:hover {
+  background-color: #ccc;
+  color: black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px
+}
+#progressbar {
+  width: 95%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  margin-bottom: 9px;
+  height: 5px;
+  background: url("images/buttons/progress_bg1.png") no-repeat;
+  float: left;
+  cursor: pointer;
+}
+#progress {
+  background: url("images/buttons/progress1.png") no-repeat;
+  height: 5px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  cursor: pointer;
+}
+#duration {
+  margin-left: 43%;
+  top: 0;
+  right: 10px;
+  padding: 4px 8px;
+  background: grey;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-weight: 300;
+}
+
 
 @media only screen and (max-device-width: 1366px) {
   #fullpage section:nth-child(2) {
