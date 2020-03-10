@@ -108,8 +108,14 @@ body {
   width: 100%;
   border-bottom: red 4px solid;
 }
-#main-nav .logo {
-
+#main-nav h3 {
+  transition: 0.5s;
+  padding-left: 50px;
+}
+#main-nav h3:hover {
+  font-family: 'OldMonolithicFont', sans-serif;
+  letter-spacing: 1em;
+  color: red;
 }
 #main-nav ul {
   list-style: none;
@@ -119,10 +125,13 @@ body {
   padding: 0 10px;
 }
 #main-nav ul li a {
+  transition: 0.5s;
   padding-bottom: 2px;
 }
 #main-nav ul li a:hover {
   border-bottom: 2px solid #262626;
+  letter-spacing: 1em;
+  color: red;
 }
 #main-nav ul.main-menu{
   flex: 1;
@@ -210,7 +219,7 @@ h2 {
   justify-content: center;
 }
 .landingScreenBottom.start {
-    animation: 1s ease-out 0s 1 slideInFromRight;
+  animation: 1s ease-out 0s 1 slideInFromRight;
 }
 .down {
   animation: blinker 2s linear infinite;
@@ -244,11 +253,17 @@ h2 {
 .artSection {
   display: grid;
   grid-template-rows: 1fr 1fr;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
 }
-.deceinInEnigma {
+.artSection.start {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+.deceitInEnigma {
   display: flex;
   justify-content: center;
 }
+
 .artSection h1 {
   position: absolute;
   -webkit-text-stroke-width: 1px;
@@ -260,11 +275,15 @@ h2 {
 .videoContainer {
   display: flex;
   align-items: center;
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+.videoContainer.start {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 .videoContainer iframe {
   width: 50vw;
   height: 70vh;
-  animation: 1s ease-out 0s 1 slideInFromRight;
+  border-radius: 10px;
 }
 #fullpage section:nth-child(3){
   position: relative;
@@ -464,17 +483,18 @@ button#next {
 #playlist li.active {
   font-weight: bold;
   padding: 3px;
-  background: grey;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  color: gold;
+  background: indigo;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 #playlist li:hover {
   background-color: purple;
   color: black;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px
 }
 #progressbar {
   width: 100%;
@@ -506,6 +526,94 @@ button#next {
   border-radius: 10px;
   font-weight: 300;
 }
+
+#fullpage section:nth-child(4){
+  position: relative;
+  background-image: url('images/monolith3.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+#socMediaSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#socMediaSection ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+#socMediaSection ul li {
+  position: relative;
+  list-style: none;
+  width: 100px;
+  height: 100px;
+  margin: 0 60px;
+  transform: rotate(-30deg) skew(25deg);;
+}
+#socMediaSection ul li span {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: #000;
+  transition: 0.5s;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px !important;
+}
+
+#socMediaSection ul li:hover span {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+#socMediaSection ul li:hover span:nth-child(5){
+  transform: translate(40px,-40px);
+  opacity: 1;
+}
+#socMediaSection ul li:hover span:nth-child(4){
+  transform: translate(30px,-30px);
+  opacity: 0.8;
+}
+#socMediaSection ul li:hover span:nth-child(3){
+  transform: translate(20px,-20px);
+  opacity: 0.6;
+}
+#socMediaSection ul li:hover span:nth-child(2){
+  transform: translate(10px,-10px);
+  opacity: 0.4;
+}
+#socMediaSection ul li:hover span:nth-child(1){
+  transform: translate(0,0);
+  transform: rotate(25deg);
+  opacity: 0.2;
+}
+
+
+#socMediaSection ul li:nth-child(1) span{
+  background: #55acee;
+}
+#socMediaSection ul li:nth-child(2) span{
+  background: #3b5999;
+}
+#socMediaSection ul li:nth-child(3) span{
+  background: #629aa9;
+}
+#socMediaSection ul li:nth-child(4) span{
+  background: #ff8800;
+}
+#socMediaSection ul li:nth-child(5) span{
+  background: #ff0000;
+}
+
+
 
 
 @media only screen and (max-device-width: 1366px) {

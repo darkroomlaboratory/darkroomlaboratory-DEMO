@@ -5,6 +5,7 @@
     <title>Project Monolith 2.0</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
@@ -15,7 +16,7 @@
       <a class="scroll" href="#main-nav"><li>⬡</li></a>
       <a class="scroll" href="#sectionTwo"><li>⬡</li></a>
       <a class="scroll" href="#worldlineDeadSection"><li>⬡</li></a>
-      <a class="scroll" href="#sectionFour"><li>⬡</li></a>
+      <a class="scroll" href="#socMediaSection"><li>⬡</li></a>
       <a class="scroll" href="#sectionFive"><li>⬡</li></a>
     </ul>
   </div>
@@ -45,7 +46,7 @@
         <div class="whitespace">
 
         </div>
-        <div class="deceinInEnigma">
+        <div class="deceitInEnigma">
           <h1>Second Full Length LP Titled<br>DECEIT IN ENIGMA<br>Coming This Summer</h1>
         </div>
       </div>
@@ -110,8 +111,56 @@
         <h1>DEAD</h1>
       </div>
     </section>
-    <!-- <section id="sectionFour"></section>
-    <section id="sectionFive"></section> -->
+    <section id="socMediaSection">
+      <ul>
+        <li>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-twitter" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-facebook" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-bandcamp" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-soundcloud" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fa fa-youtube-play" aria-hidden="true"></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- <section id="sectionFive"></section> -->
   </div>
 
 
@@ -136,13 +185,45 @@
   });
 
   // Checking if the animation shall occur
+  var landingPage_position = $('#Home').offset().top;
+
+  $(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var scroll_pos_test = landingPage_position;
+
+    if(y_scroll_pos < scroll_pos_test || y_scroll_pos < sectionTwo_position) {
+        $('.landingScreenTop').addClass('start');
+        $('.landingScreenBottom').addClass('start');
+    }
+    else {
+      $('.landingScreenTop').removeClass('start');
+      $('.landingScreenBottom').removeClass('start');
+    }
+  });
+
+  var sectionTwo_position = $('#sectionTwo').offset().top;
+
+  $(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var scroll_pos_test = sectionTwo_position;
+
+    if(y_scroll_pos < worldline_position && y_scroll_pos > landingPage_position) {
+        $('.artSection').addClass('start');
+        $('.videoContainer').addClass('start');
+    }
+    else {
+      $('.artSection').removeClass('start');
+      $('.videoContainer').removeClass('start');
+    }
+  });
+
   var worldline_position = $('#worldlineDeadSection').offset().top;
 
   $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
     var scroll_pos_test = worldline_position;
 
-    if(y_scroll_pos > scroll_pos_test - 450) {
+    if(y_scroll_pos > sectionTwo_position + 100 && y_scroll_pos < socmedia_position) {
         $('.worldlineColumn').addClass('start');
         $('.deadColumn').addClass('start');
         $('.musicPlayer').addClass('start');
@@ -154,21 +235,8 @@
     }
 });
 
-var landingPage_position = $('#Home').offset().top;
+  var socmedia_position = $('#socMediaSection').offset().top;
 
-$(window).on('scroll', function() {
-  var y_scroll_pos = window.pageYOffset;
-  var scroll_pos_test = landingPage_position;
-
-  if(y_scroll_pos < scroll_pos_test + 300) {
-      $('.landingScreenTop').addClass('start');
-      $('.landingScreenBottom').addClass('start');
-  }
-  else {
-    $('.landingScreenTop').removeClass('start');
-    $('.landingScreenBottom').removeClass('start');
-  }
-});
 
   // Active link switching
   $(window).scroll(function() {
