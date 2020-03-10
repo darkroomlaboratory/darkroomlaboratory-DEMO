@@ -233,7 +233,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  background-image: url("images/monolithred.jpg");
+  background-image: url("images/Monolithred.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
