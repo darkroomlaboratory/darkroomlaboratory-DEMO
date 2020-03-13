@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Project Monolith 2.0</title>
+    <title>Darkroom Laboratory</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -21,24 +21,25 @@
     </ul>
   </div>
   <nav id="main-nav">
-    <h3>Project Monolith</h3>
+    <div class="Dlab">
+      <a>Darkroom Laboratory</a>
+    </div>
     <ul class="main-menu">
-      <li><a href="#">Office</a></li>
-      <li><a href="#">Platform</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contacts</a></li>
-      <li><a href="#">Address</a></li>
-      <li><a href="#">Staff</a></li>
+      <li><a href="#">Project Monolith</a></li>
+      <li><a href="#">Dolus</a></li>
+      <li><a href="#">Mizu</a></li>
+      <li><a href="#">Associate</a></li>
+      <li><a href="#">Terminal</a></li>
+      <li><a href="#">Squad</a></li>
     </ul>
   </nav>
 
   <div id="fullpage">
     <section id="Home">
-      <div class="landingScreenTop">
-        <h2>Project Monolith v2.0</h2>
+      <div class="landingScreenLeft">
       </div>
-      <div class="landingScreenBottom">
-        <a class="scroll down" href="#sectionTwo">↓↓↓</a>
+      <div class="landingScreenRight">
+        <img class="pcimg" src="images/pchexagon2.gif">
       </div>
     </section>
     <section id="sectionTwo">
@@ -192,12 +193,12 @@
     var scroll_pos_test = landingPage_position;
 
     if(y_scroll_pos < scroll_pos_test || y_scroll_pos < sectionTwo_position) {
-        $('.landingScreenTop').addClass('start');
-        $('.landingScreenBottom').addClass('start');
+        $('.landingScreenLeft').addClass('start');
+        $('.landingScreenRight').addClass('start');
     }
     else {
-      $('.landingScreenTop').removeClass('start');
-      $('.landingScreenBottom').removeClass('start');
+      $('.landingScreenLeft').removeClass('start');
+      $('.landingScreenRight').removeClass('start');
     }
   });
 

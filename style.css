@@ -1,14 +1,7 @@
-/* @font-face {
-    font-family: 'MyWebFont';
-    src: url('webfont.eot');
-    src: url('fonts/abovedemoregular-ljmd-webfont.woff') format('woff'),
-     url('fonts/AboveDemoRegular-lJMd.ttf') format('truetype');
-}
 @font-face {
-    font-family: "MyRegularWebFont";
-    src: url('fonts/gisha.woff') format('woff'),
-      url('fonts/gisha.ttf') format('truetype');
-} */
+    font-family: "TerminalFont";
+    src: url('fonts/Retro Gaming.ttf') format('truetype');
+}
 @font-face {
     font-family: "MonolithicFont";
     src: url('fonts/rexlia rg.ttf') format('truetype');
@@ -106,17 +99,21 @@ body {
   padding: 20px 0;
   font-size: 13px;
   width: 100%;
-  border-bottom: red 4px solid;
+  background-color: black;
+  border-bottom: green 2px solid;
 }
 #main-nav h3 {
+}
+.Dlab a {
   transition: 0.5s;
   padding-left: 50px;
+  color: white;
 }
-#main-nav h3:hover {
+/* .Dlab:hover a {
   font-family: 'OldMonolithicFont', sans-serif;
   letter-spacing: 1em;
   color: red;
-}
+} */
 #main-nav ul {
   list-style: none;
   display: flex;
@@ -125,11 +122,13 @@ body {
   padding: 0 10px;
 }
 #main-nav ul li a {
+  font-family: 'TerminalFont', sans-serif;
   transition: 0.5s;
   padding-bottom: 2px;
+  color: green;
 }
 #main-nav ul li a:hover {
-  border-bottom: 2px solid #262626;
+  /* border-bottom: 2px solid #262626; */
   letter-spacing: 1em;
   color: red;
 }
@@ -138,7 +137,6 @@ body {
   margin-left: 20px;
 }
 #main-nav a {
-  color: #262626;
   text-decoration: none;
 }
 .theDock{
@@ -155,7 +153,7 @@ body {
   font-family: "MonolithicFont", sans-serif;
 }
 .theDock li{
-  color: rgba(149, 165, 166, 1);
+  color: green;
   font-size: 16px;
   transition: transform .1s;
   padding: 0;
@@ -165,16 +163,13 @@ body {
 }
 .theDock li.active{
   -webkit-text-stroke-width: 0.3px;
-  -webkit-text-stroke-color: red;
+  -webkit-text-stroke-color: green;
   transform: scale(1.3);
-  color: rgba(232, 236, 241, 1)!important;
+  color: red!important;
 }
 h2 {
-  color: rgba(232, 236, 241, 1);
-  font-weight: bold;
   margin: 0;
   padding: 0;
-  font-family: 'MonolithicFont', sans-serif;
 }
 
 #fullpage {
@@ -189,51 +184,49 @@ h2 {
 
 }
 #fullpage section:nth-child(1){
-  background-image: url('images/monolith3.jpeg');
-  background-size: cover;
+  /* background-image: url('images/monolith3.jpeg');
+  background-size: cover; */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  background-color: rgb(48,48,48);
+  background-color: #000;
 }
 #Home {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   height: 94vh;
 }
-.landingScreenTop {
+.landingScreenLeft {
   animation: 1s ease-out 0s 1 slideInFromTop;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
-.landingScreenTop.start {
+.pcimg {
+  width: 467px;
+  height: 320px;
+}
+.landingScreenLeft.start {
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
-.landingScreenBottom {
+.landingScreenRight {
   animation: 1s ease-out 0s 1 slideInFromBottom;
   position: relative;
   display: flex;
   justify-content: center;
 }
-.landingScreenBottom.start {
+.landingScreenRight.start {
   animation: 1s ease-out 0s 1 slideInFromRight;
 }
-.down {
-  animation: blinker 2s linear infinite;
-  text-decoration: none;
-  font-size: 5em;
-  color: rgba(232, 236, 241, 1);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: red;
-  cursor: pointer;
-}
+
 #Home h2 {
   position: absolute;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: red;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: green;
+  color: black;
   font-size: 6vw;
 }
 
@@ -544,7 +537,8 @@ button#next {
   position: relative;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 #socMediaSection ul li {
   position: relative;
@@ -628,4 +622,10 @@ button#next {
   #Home {
     border-top: none;
   }
+  #socMediaSection ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+@media (max-width: 768px) {
 }
